@@ -1,0 +1,12 @@
+diff -up sblim-1/sblim-smis-hba-1.0.0/src/Linux_CommonHBA.h_old sblim-1/sblim-smis-hba-1.0.0/src/Linux_CommonHBA.h
+--- sblim-1/sblim-smis-hba-1.0.0/src/Linux_CommonHBA.h_old	2009-09-01 15:22:39.000000000 +0200
++++ sblim-1/sblim-smis-hba-1.0.0/src/Linux_CommonHBA.h	2009-12-21 14:35:33.000000000 +0100
+@@ -33,7 +33,7 @@
+ /* ---------------------------------------------------------------------------*/
+ 
+ #include <time.h>
+-#include <sys/hbaapi.h>
++#include <hbaapi.h>
+ 
+ #define HBA_MAX_DEV_NAME        30
+ #define DEVICEID_SIZE           256

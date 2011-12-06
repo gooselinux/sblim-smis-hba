@@ -1,0 +1,65 @@
+diff -up sblim-smis-hba-1.0.0/Makefile.am_old sblim-smis-hba-1.0.0/Makefile.am
+--- sblim-smis-hba-1.0.0/Makefile.am_old	2009-09-01 15:22:40.000000000 +0200
++++ sblim-smis-hba-1.0.0/Makefile.am	2009-11-18 17:49:13.000000000 +0100
+@@ -151,61 +151,3 @@ preuninstall:
+ 
+ dist-hook:
+ 	test -d "$(distdir)" &&	rm -rf `find $(distdir) -type d -name CVS`
+-
+-#
+-# Automake instructions for ./test subdir
+-#
+-#EXTRA_DIST+=test README.TEST
+-if TESTSUITE
+-testsuitedir=@TESTSUITEDIR@
+-testsuitesystemdir=@TESTSUITEDIR@/system/linux
+-testsuitecimdir=@TESTSUITEDIR@/cim
+-testsuite_SCRIPTS=test/test-sblim-hba.sh
+-testsuitesystem_DATA= \
+-	test/system/linux/Linux_FCCard.system \
+-	test/system/linux/Linux_FCControlledBy.system \
+-	test/system/linux/Linux_FCDeviceSAPImplementation.system \
+-	test/system/linux/Linux_FCElementSoftwareIdentity.system \
+-	test/system/linux/Linux_FCElementStatisticalData.system \
+-	test/system/linux/Linux_FCHostedAccessPoint.system \
+-	test/system/linux/Linux_FCInstalledSoftwareIdentity.system \
+-	test/system/linux/Linux_FCLogicalDisk.system \
+-	test/system/linux/Linux_FCPortController.system \
+-	test/system/linux/Linux_FCPortStatistics.system \
+-	test/system/linux/Linux_FCPort.system \
+-	test/system/linux/Linux_FCProduct.system \
+-	test/system/linux/Linux_FCRealizes.system \
+-	test/system/linux/Linux_FCSCSIProtocolEndpoint.system \
+-	test/system/linux/Linux_FCSoftwareIdentity_Driver.system \
+-	test/system/linux/Linux_FCSoftwareIdentity_Firmware.system \
+-	test/system/linux/Linux_FCSoftwareIdentity.system \
+-	test/system/linux/Linux_FCSystemDevice_LogicalDevice.system \
+-	test/system/linux/Linux_FCSystemDevice.system
+-
+-#testsuitesystem_SCRIPTS=
+-testsuitecim_DATA= \
+-	test/cim/Linux_FCCard.cim \
+-	test/cim/Linux_FCControlledBy.cim \
+-	test/cim/Linux_FCDeviceSAPImplementation.cim \
+-	test/cim/Linux_FCElementSoftwareIdentity.cim \
+-	test/cim/Linux_FCElementStatisticalData.cim \
+-	test/cim/Linux_FCHostedAccessPoint.cim \
+-	test/cim/Linux_FCInstalledSoftwareIdentity.cim \
+-	test/cim/Linux_FCLogicalDisk.cim \
+-	test/cim/Linux_FCPort.cim \
+-	test/cim/Linux_FCPortController.cim \
+-	test/cim/Linux_FCPortStatistics.cim \
+-	test/cim/Linux_FCProduct.cim \
+-	test/cim/Linux_FCRealizes.cim \
+-	test/cim/Linux_FCSCSIProtocolEndpoint.cim \
+-	test/cim/Linux_FCSoftwareIdentity.cim \
+-	test/cim/Linux_FCSoftwareIdentity_Driver.cim \
+-	test/cim/Linux_FCSoftwareIdentity_Firmware.cim \
+-	test/cim/Linux_FCSystemDevice.cim \
+-	test/cim/Linux_FCSystemDevice_LogicalDevice.cim
+-
+-runtest: install
+-	cd $(DESTDIR)$(TESTSUITEDIR) &&	./test-sblim-hba.sh
+-
+-#doc_DATA+=README.TEST
+-endif
